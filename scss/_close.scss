@@ -57,7 +57,9 @@
 @if $enable-dark-mode {
   @include color-mode(dark) {
     .btn-close {
-      @include btn-close-white();
+      &:not([data-bs-theme="light"]) {
+        @include btn-close-white(); 
+      }
     }
   }
 }
